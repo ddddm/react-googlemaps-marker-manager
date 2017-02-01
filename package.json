@@ -2,6 +2,7 @@
   "name": "react-googlemaps-marker-manager",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ddddm.github.io/react-googlemaps-marker-manager",
   "devDependencies": {
     "react-scripts": "0.8.5"
   },
@@ -15,6 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }

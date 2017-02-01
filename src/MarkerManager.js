@@ -4,6 +4,8 @@ import uuid from 'uuid/v4'
 import Marker from './Marker';
 import MarkerForm from './MarkerForm';
 
+const apiKey = "AIzaSyDLQ6IpazZO3YsGz1QNKvej5Cjh_IkQziM";
+
 
 class MarkerManager extends Component {
   constructor(props) {
@@ -168,6 +170,7 @@ class MarkerManager extends Component {
 
     return (
       <GoogleMap
+        key={apiKey}
         onGoogleApiLoaded={({ map }) => this.setState( { mapInstance: map } ) }
         onClick={this.openForm}
         onChildClick={this.editMarker}
