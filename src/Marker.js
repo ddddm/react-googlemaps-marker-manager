@@ -7,8 +7,8 @@ const style = {
   height: '20px',
   width: '20px',
   borderRadius: '50px',
-  background: '#000000',
-  border: '3px solid #575757'
+  background: '#0f0f0f',
+  border: '2px solid #848388'
 }
 
 export default function Marker(props) {

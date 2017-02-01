@@ -1,0 +1,54 @@
+.MarkerForm {
+  display: block;
+  position: relative;
+  width: 250px;
+  height: 200px;
+  box-sizing: border-box;
+  padding: 3rem .5rem .5rem;
+  background-color: #0f0f0f;
+}
+
+.MarkerForm_input,
+.MarkerForm_labelBox,
+.MarkerForm_submitButton {
+  display: block;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica', 'Tahoma', sans-serif;
+}
+
+.MarkerForm_input {
+  width: 100%;
+  padding: .4rem;
+  color: #b7b7af;
+  background-color: #373737;
+  border: none;
+  border-radius: 0;
+  font-size: 1.2rem;
+}
+
+.MarkerForm_input::placeholder {
+  color: #5d5e60;
+}
+
+.MarkerForm_submitButton {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: .4rem;
+  color: #b7b7af;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.MarkerForm_closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5rem;
+  width: 2rem;
+  color: #373737;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
