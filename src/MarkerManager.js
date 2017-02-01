@@ -16,6 +16,7 @@ class MarkerManager extends Component {
         lng: 30.337157
       },
       hoverDistance: 25,
+      mapInstance: null,
       markers: {
         [uuid()]: {
           name: 'Place 1',
@@ -123,6 +124,10 @@ class MarkerManager extends Component {
   openForm({ x, y, lat, lng, event, markerKey }) {
     if(this.state.isFormOpened) return;
 
+    this.state.mapInstance.set('scrollwheel', false)
+    this.state.mapInstance.set('draggable', false)
+    this.state.mapInstance.set('disableDoubleClickZoom', true)
+
     this.setState({
       isFormOpened: true,
       form: { lat, lng }
@@ -137,6 +142,10 @@ class MarkerManager extends Component {
     this.setState( state => {
       state.isFormOpened = false
     } )
+
+    this.state.mapInstance.set('scrollwheel', true)
+    this.state.mapInstance.set('draggable', true)
+    this.state.mapInstance.set('disableDoubleClickZoom', false)
 
     if( markerKey ) {
       this.setState({ editingMarker: null })
@@ -159,6 +168,7 @@ class MarkerManager extends Component {
 
     return (
       <GoogleMap
+        onGoogleApiLoaded={({ map }) => this.setState( { mapInstance: map } ) }
         onClick={this.openForm}
         onChildClick={this.editMarker}
         hoverDistance={state.hoverDistance}
