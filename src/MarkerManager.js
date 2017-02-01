@@ -170,7 +170,9 @@ class MarkerManager extends Component {
 
     return (
       <GoogleMap
-        key={apiKey}
+        bootstrapURLKeys={{
+          key: apiKey
+        }}
         onGoogleApiLoaded={({ map }) => this.setState( { mapInstance: map } ) }
         onClick={this.openForm}
         onChildClick={this.editMarker}
