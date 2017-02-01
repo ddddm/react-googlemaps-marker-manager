@@ -10,6 +10,12 @@ class MarkerManager extends Component {
     super(props);
 
     this.state = {
+      zoom: 9,
+      center: {
+        lat: 59.938043,
+        lng: 30.337157
+      },
+      hoverDistance: 25,
       markers: {
         [uuid()]: {
           name: 'Place 1',
@@ -147,16 +153,17 @@ class MarkerManager extends Component {
       });
     }
 
-    const markersList = mapObject( markers, (key, value) => {
-      return <Marker key={key} lat={value.lat} lng={value.lng} />
+    const markersList = mapObject( markers, (key, marker) => {
+      return <Marker name={marker.name} key={key} lat={marker.lat} lng={marker.lng} />
     })
 
     return (
       <GoogleMap
         onClick={this.openForm}
         onChildClick={this.editMarker}
-        center={{lat: 59.938043, lng: 30.337157}}
-        zoom={9} >
+        hoverDistance={state.hoverDistance}
+        center={state.center}
+        zoom={state.zoom} >
 
         { markersList }
 

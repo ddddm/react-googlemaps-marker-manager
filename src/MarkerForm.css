@@ -1,6 +1,7 @@
 .MarkerForm {
   display: block;
   position: relative;
+  top: 25px;
   width: 250px;
   height: 225px;
   box-sizing: border-box;
