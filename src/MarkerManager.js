@@ -12,25 +12,25 @@ class MarkerManager extends Component {
     super(props);
 
     this.state = {
-      zoom: 9,
+      zoom: 14,
       center: {
-        lat: 59.938043,
-        lng: 30.337157
+        lat: 56.834102980558356,
+        lng: 60.603461016113215
       },
       hoverDistance: 25,
       mapInstance: null,
       markers: {
         [uuid()]: {
-          name: 'Place 1',
-          description: 'Description1',
-          lat: 59.938043,
-          lng: 30.337157
+          name: 'Fastdev',
+          description: 'company',
+          lat: 56.836887893776634,
+          lng: 60.58270876496499
         },
         [uuid()]: {
-          name: 'Place2',
-          description: 'Description2',
-          lat: 59.904,
-          lng: 31.004
+          name: 'Pepperoni',
+          description: 'Nice pizza',
+          lat: 56.8334617462304,
+          lng: 60.5962539204902
         }
       },
       // isFormOpened: true,

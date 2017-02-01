@@ -3,7 +3,7 @@ import React from 'react';
 const containerStyle = {
   position: 'relative',
   left: '-25px',
-  top: '-25px',
+  top: '-50px',
   height: '50px',
   width: '50px',
   overflow: 'visible'
