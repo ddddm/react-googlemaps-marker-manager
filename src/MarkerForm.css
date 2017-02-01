@@ -2,7 +2,7 @@
   display: block;
   position: relative;
   width: 250px;
-  height: 200px;
+  height: 225px;
   box-sizing: border-box;
   padding: 3rem .5rem .5rem;
   background-color: #0f0f0f;
@@ -48,6 +48,16 @@
   font-size: 1.5rem;
   width: 2rem;
   color: #373737;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.MarkerForm_removeButton {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: .4rem;
+  color: #b7b7af;
   background-color: transparent;
   border: none;
   border-radius: 0;

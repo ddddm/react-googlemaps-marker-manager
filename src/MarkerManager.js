@@ -37,6 +37,7 @@ class MarkerManager extends Component {
     this.openForm = this.openForm.bind(this);
     this.closeForm = this.closeForm.bind(this);
     this.onMarkerSubmit = this.onMarkerSubmit.bind(this);
+    this.removeMarker = this.removeMarker.bind(this);
   }
 
   createMarker({ lat, lng, name, description }) {
@@ -49,7 +50,26 @@ class MarkerManager extends Component {
         name,
         description
        }
+
+      return state;
     })
+  }
+
+  removeMarker( markerKey ) {
+    this.setState( state => {
+      let newMarkers = state.markers;
+      delete newMarkers[markerKey];
+
+      console.log(newMarkers);
+
+      return {
+        ...state,
+        markers: newMarkers
+      };
+    })
+
+    this.closeForm( markerKey );
+
   }
 
   editMarker( markerKey, position ) {
@@ -144,6 +164,7 @@ class MarkerManager extends Component {
             markerKey={ state.editingMarker }
             marker={ markers[ state.editingMarker ] }
             onMarkerSubmit={ marker => this.onMarkerSubmit( marker, state.editingMarker )  }
+            onMarkerRemove={ () => this.removeMarker( state.editingMarker ) }
             onClose={ () => {this.closeForm(state.editingMarker)} }
             lat={state.form.lat}
             lng={state.form.lng} />  )

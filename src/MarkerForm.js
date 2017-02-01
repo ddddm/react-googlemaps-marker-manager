@@ -21,10 +21,10 @@ export default class MarkerForm extends Component {
       }
     }
 
-
     this.handleChange = this.handleChange.bind(this);
-    this.handeSubmit = this.handeSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCloseClick = this.handleCloseClick.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   handleChange(event) {
@@ -41,7 +41,7 @@ export default class MarkerForm extends Component {
     event.preventDefault();
   }
 
-  handeSubmit(event) {
+  handleSubmit(event) {
     const marker = this.state;
     const { onMarkerSubmit } = this.props;
 
@@ -49,11 +49,22 @@ export default class MarkerForm extends Component {
     event.preventDefault();
   }
 
+  handleRemove(event) {
+    const { onMarkerRemove } = this.props;
+
+    if(onMarkerRemove) {
+      onMarkerRemove();
+    }
+
+    event.preventDefault();
+  }
+
+
   render() {
     const { markerKey } = this.props;
     const marker = this.state;
     return (
-    <form onSubmit={ this.handeSubmit } className='MarkerForm'>
+    <form onSubmit={ this.handleSubmit } className='MarkerForm'>
       <button
         className='MarkerForm_closeButton'
         onClick={ this.handleCloseClick }
@@ -88,6 +99,8 @@ export default class MarkerForm extends Component {
         <span className='MarkerForm_labelText'>Description</span>
       </label>
       <button className='MarkerForm_submitButton' type="submit">{ markerKey? 'Save': 'Create marker'}</button>
+      { markerKey? <button onClick={ this.handleRemove } className='MarkerForm_removeButton'>Remove marker</button> : null }
+
     </form>
     )
   }
