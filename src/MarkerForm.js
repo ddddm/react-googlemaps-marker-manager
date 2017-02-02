@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './MarkerForm.css';
 
-export default class MarkerForm extends Component {
+class MarkerForm extends Component {
   constructor(props) {
     super(props)
 
@@ -105,3 +105,5 @@ export default class MarkerForm extends Component {
     )
   }
 }
+
+export default MarkerForm;

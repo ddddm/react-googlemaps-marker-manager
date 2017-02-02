@@ -69,8 +69,6 @@ class MarkerManager extends Component {
       let newMarkers = state.markers;
       delete newMarkers[markerKey];
 
-      console.log(newMarkers);
-
       return {
         ...state,
         markers: newMarkers
